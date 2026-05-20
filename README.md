@@ -32,7 +32,5 @@ IABT-DW/
 │       └── plot_ablation.py          # 图4：消融实验条形图
 ├── experiments/
 │   └── ablation_study.py             # 消融实验
-├── results/                          # 输出结果
-├── requirements.txt
-├── .gitignore
+├── results                          # 输出结果
 └── README.md
