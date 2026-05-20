@@ -15,9 +15,6 @@
 
 **仓库结构**
 IABT-DW/
-├── data/
-│   ├── raw/                          # 原始数据
-│   └── processed/                    # 处理后数据
 ├── src/
 │   ├── feature_engineering/
 │   │   └── build_features.py         # 特征工程（35原始+27衍生，两阶段筛选）
