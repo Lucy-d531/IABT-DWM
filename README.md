@@ -14,7 +14,7 @@
 本实验使用的原始数据均来自公开渠道，详见论文附录表1。
 
 **仓库结构**
-IABT-DW/
+IABT-DWM/
 ├── src/
 │   ├── feature_engineering/
 │   │   └── build_features.py         # 特征工程（35原始+27衍生，两阶段筛选）
