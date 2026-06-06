@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-论文图3：IABT-DW 与 DecisionTree, RandomForest, ExtraTrees 的学习曲线
+论文图3：IABT-DWM 与 DecisionTree, RandomForest, ExtraTrees 的学习曲线
 """
 
 import numpy as np
