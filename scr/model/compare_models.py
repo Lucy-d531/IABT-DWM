@@ -51,7 +51,7 @@ models = {
     "RandomForest": RandomForestClassifier(random_state=42, n_jobs=-1),
     "LightGBM": LGBMClassifier(random_state=42, verbose=-1),
     "CatBoost": CatBoostClassifier(random_state=42, verbose=0),
-    "IABT-DW": XGBClassifier(random_state=42, eval_metric='logloss', verbosity=0)
+    "IABT-DWM": XGBClassifier(random_state=42, eval_metric='logloss', verbosity=0)
 }
 
 results = []
