@@ -11,9 +11,6 @@ import seaborn as sns
 from sklearn.metrics import roc_curve, precision_recall_curve, auc
 import pickle
 
-# 加载对比结果（实际需要各模型的预测概率，此处演示框架）
-# 建议在 compare_models.py 中保存每个模型的测试集预测概率，然后在此绘图
-# 由于篇幅，仅提供代码框架，实际运行需根据保存的文件调整。
 
 # 示例：假设已有各模型的 y_proba 和 y_true
 # y_true = ...
@@ -27,8 +24,7 @@ sns.heatmap(perf, annot=True, fmt=".4f", cmap="RdYlGn", center=0.9)
 plt.savefig("results/heatmap.png", dpi=300, bbox_inches='tight')
 plt.close()
 
-# 2. 箱线图（需要各模型多次交叉验证的分数，此处仅示意，可改为单次预测的箱线图？论文图2(b)是各模型性能分布，需多折）
-# 建议用5折交叉验证结果绘制箱线图。
+# 2. 箱线图
 
 # 3. ROC曲线
 plt.figure(figsize=(8,6))
