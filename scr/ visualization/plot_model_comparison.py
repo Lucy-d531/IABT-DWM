@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
 """
-论文图2：模型对比的热力图、箱线图、ROC曲线、PR曲线
-需要先运行 compare_models.py 得到对比结果
+Paper Figure 2: Heat map, box plot, ROC curve, PR curve of model comparison
+You need to run compare_models.py first to get the comparison results
 """
 
 import pandas as pd
@@ -12,11 +11,6 @@ from sklearn.metrics import roc_curve, precision_recall_curve, auc
 import pickle
 
 
-# 示例：假设已有各模型的 y_proba 和 y_true
-# y_true = ...
-# probas = {"RandomForest": rf_proba, ...}
-
-# 1. 热力图 (模型性能指标)
 perf = pd.read_csv("results/table4_comparison.csv")
 perf = perf.set_index("Model")[["Accuracy","Precision","Recall","F1","AUC"]]
 plt.figure(figsize=(10,8))
@@ -24,9 +18,6 @@ sns.heatmap(perf, annot=True, fmt=".4f", cmap="RdYlGn", center=0.9)
 plt.savefig("results/heatmap.png", dpi=300, bbox_inches='tight')
 plt.close()
 
-# 2. 箱线图
-
-# 3. ROC曲线
 plt.figure(figsize=(8,6))
 # for name, proba in probas.items():
 #     fpr, tpr, _ = roc_curve(y_true, proba)
@@ -38,7 +29,6 @@ plt.legend()
 plt.savefig("results/roc_curves.png", dpi=300)
 plt.close()
 
-# 4. PR曲线
 plt.figure(figsize=(8,6))
 # for name, proba in probas.items():
 #     prec, rec, _ = precision_recall_curve(y_true, proba)
