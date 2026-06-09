@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-论文 四(六) 消融实验
-移除结构特征、衍生特征、金额时间特征等5种设置
-"""
-
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -19,7 +13,6 @@ X = df.drop('label', axis=1)
 y = df['label']
 all_features = list(X.columns)
 
-# 特征分组（论文定义）
 structural = ['Avg_Outdegree', 'Pearson_Correlation', 'Average_Path_Length',
               'Diameter', 'Closeness_Centrality', 'Betweenness_Centrality']
 derived = ['Transaction_Regularity', 'Time_Stability', 'Activity_Intensity',
@@ -40,7 +33,7 @@ groups = {
 
 def evaluate_subset(feature_list):
     X_sub = X[feature_list]
-    # 三级划分
+  
     X_trainval, X_test, y_trainval, y_test = train_test_split(
         X_sub, y, test_size=0.2, random_state=42, stratify=y
     )
@@ -66,7 +59,7 @@ def evaluate_subset(feature_list):
 results = []
 for name, feats in groups.items():
     f1, auc, t = evaluate_subset(feats)
-    results.append({"实验组": name, "特征数": len(feats), "F1": f1*100, "AUC": auc*100, "时间(s)": t})
+    results.append({"Experimental Group": name, "number of features": len(feats), "F1": f1*100, "AUC": auc*100, "time(s)": t})
 
 res_df = pd.DataFrame(results)
 res_df.to_csv("results/ablation_results.csv", index=False)
