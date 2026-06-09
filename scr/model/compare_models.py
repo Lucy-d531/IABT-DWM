@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-论文 四(三) 表4
-对比 IABT-DW 与 11 种主流机器学习模型
-所有模型均使用默认参数 + Tomek Links + 标准化
-"""
-
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -28,7 +21,6 @@ df = pd.read_csv("data/processed/filtered_features_dataset.csv")
 X = df.drop('label', axis=1)
 y = df['label']
 
-# 三级划分（与训练脚本一致）
 X_trainval, X_test, y_trainval, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42, stratify=y
 )
@@ -38,7 +30,7 @@ X_train, X_val, y_train, y_val = train_test_split(
 X_final = pd.concat([X_train, X_val])
 y_final = pd.concat([y_train, y_val])
 
-# 定义模型列表（论文表4）
+
 models = {
     "BernoulliNB": BernoulliNB(),
     "Ridge": Ridge(),
