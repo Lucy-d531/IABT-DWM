@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
 """
-论文图3：IABT-DWM 与 DecisionTree, RandomForest, ExtraTrees 的学习曲线
+Paper Figure 3: Learning curve of IABT-DWM and DecisionTree, RandomForest, ExtraTrees
 """
 
 import numpy as np
@@ -22,7 +21,7 @@ models = {
     "DecisionTree": DecisionTreeClassifier(random_state=42),
     "RandomForest": RandomForestClassifier(random_state=42, n_jobs=-1),
     "ExtraTrees": ExtraTreesClassifier(random_state=42, n_jobs=-1),
-    "IABT-DW": XGBClassifier(random_state=42, n_estimators=500, max_depth=5,
+    "IABT-DWM": XGBClassifier(random_state=42, n_estimators=500, max_depth=5,
                               learning_rate=0.2, gamma=0.015, subsample=0.842,
                               colsample_bytree=0.5, eval_metric='logloss', verbosity=0)
 }
